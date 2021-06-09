@@ -1,9 +1,12 @@
 package subtask2
 
 class Abbreviation {
-
-    // TODO: Complete the following function
     fun abbreviationFromA(a: String, b: String): String {
-        throw NotImplementedError("Not implemented")
+        val charSequence = b.toCharArray()
+        val sourceString = a.toUpperCase()
+        for (i in charSequence.indices)
+            if (charSequence[i].toUpperCase() !in sourceString.substring(i))
+                return "NO"
+        return "YES"
     }
 }
